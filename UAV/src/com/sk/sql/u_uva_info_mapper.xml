@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" 
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.sk.dao.U_uva_info_dao">
+	<update id="createTable" parameterType="string">
+		create table ${tablename}(id int not null primary key auto_increment,username varchar(120) not null,
+		startime varchar(120),endtime varchar(120),startLon double,startLat double,endLon double,endLat double)
+	</update>
+	<select id="findAll" parameterType="string" resultType="entity.Test_uva_info">
+		select * from ${tablename}
+	</select>
+	<select id="findtable" resultType="string">
+		select table_name from information_schema.TABLES where TABLE_SCHEMA='sk_uva'
+	</select>
+	<insert id="save" parameterType="entity.Test_uva_info">
+		insert into u${username}(username,startime,startLon,startLat) values(#{username},#{startime},#{startLon},#{startLat})
+	</insert>
+	<update id="update" parameterType="entity.Test_uva_info">
+		update u${username} set endtime=#{endtime},endLon=#{endLon},endLat=#{endLat} WHERE 1 ORDER BY id DESC LIMIT 1
+	</update>
+</mapper>

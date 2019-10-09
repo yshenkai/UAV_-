@@ -1,0 +1,28 @@
+******************
+login.jsp普通用户登录页面
+adminlogin.jsp管理员用户登录界面
+register.jsp普通用户注册界面
+******************
+user.jsp普通用户登录后跳转到的主页面
+admin.jsp管理员登录后跳转的主页面
+******************
+用户界面
+侧边栏点击，右侧主体跳转
+点击实时监控，右侧跳转到realtime_monitor.jsp ----> 加载tracemap.js(里有注释)地图脚本，此地图应该是飞机轨迹的地图
+点击历史记录，右侧跳转到history.jsp
+点击飞行计划申请，右侧跳转到flightapply.jsp
+点击飞行计划查询，右侧跳转到flight.jsp
+点击禁飞区查询，右侧跳转到flight.jsp
+点击禁飞区地图，右侧跳转到nofly_map.jsp -----> 加载nofly.js（有注释）地图脚本，此地图应该显示禁飞区地图
+点击政策法规，右侧跳转到police.jsp
+点击用户认证，右侧跳转到auth.jsp
+
+*******************
+管理员界面
+侧边栏点击，右侧主体跳转
+点击实时监控，右侧跳转到realtime_monitor.jsp ----> 加载tracemap.js(里有注释)地图脚本，此地图应该是飞机轨迹的地图
+点击历史记录，右侧跳转到history.jsp
+点击飞行计划查询，右侧跳转到flight.jsp
+点击飞行计划审批，右侧跳转到flight.jsp
+点击禁飞区报备，右侧跳转到set_nofly.jsp -----> 加载set_nofly.js（有注释）地图脚本，此地图应该划定禁飞区的地图
+点击禁飞区查询，右侧跳转到flight.jsp 

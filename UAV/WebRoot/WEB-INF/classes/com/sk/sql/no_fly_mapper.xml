@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" 
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.sk.dao.No_fly_dao">
+	<select id="findAll" resultType="entity.No_fly">
+		select * from no_fly
+	</select>
+	<insert id="save" parameterType="entity.No_fly">
+		insert into no_fly(type,info,startime,endtime) values(#{type},#{info},#{startime},#{endtime})
+	</insert>
+</mapper>

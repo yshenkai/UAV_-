@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" 
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.sk.dao.Nofly_number_dao">
+	<insert id="save" parameterType="entity.Nofly_number">
+		insert into nofly_number(number,intime) values(#{number},#{intime})
+	</insert>
+	<delete id="delete" parameterType="string">
+		delete from nofly_number where number=#{number}
+	</delete>
+	<select id="findByNumber" parameterType="string" resultType="entity.Nofly_number">
+		select * from nofly_number where number=#{number}
+	</select>
+	<update id="update" parameterType="entity.Nofly_number">
+		update nofly_number set intime=#{intime} where number=#{number}
+	</update>
+	<select id="findAll" resultType="entity.Nofly_number">
+		select * from nofly_number
+	</select>
+	<delete id="deleteByLowTime" parameterType="long">
+		delete from nofly_number where intime&lt;#{intime}
+	</delete>
+	<select id="findByUpTime" parameterType="long" resultType="entity.Nofly_number">
+		select * from nofly_number where intime&gt;#{intime}
+	</select>
+</mapper>

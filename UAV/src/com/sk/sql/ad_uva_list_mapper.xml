@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" 
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.sk.dao.Ad_uva_list_dao">
+	<select id="findAll" resultType="entity.Ad_uva_list">
+		select * from ad_uva_list
+	</select>
+	<select id="findByName" parameterType="string" resultType="entity.Ad_uva_list">
+		select * from ad_uva_list where User=#{name}
+	</select>
+	<insert id="save" parameterType="entity.Ad_uva_list">
+		insert into ad_uva_list(User,Euq,Pit,Row,Yaw,Lon,Lat,Alt) values(#{User},#{Euq},#{Pit},#{Row},#{Yaw},#{Lon},#{Lat},#{Alt})
+	</insert>
+	<delete id="delete" parameterType="string">
+		delete from ad_uva_list where User=#{name}
+	</delete>
+	<update id="update" parameterType="entity.Ad_uva_list">
+		update ad_uva_list set Euq=#{Euq},Pit=#{Pit},Row=#{Row},Yaw=#{Yaw},Lon=#{Lon},Lat=#{Lat},Alt=#{Alt} where User=#{User}
+	</update>
+</mapper>
